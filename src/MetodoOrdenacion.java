@@ -41,15 +41,15 @@ public class MetodoOrdenacion {
     }
 
     //bubblesort
-    public boolean comprobarArrayDesordenado(int[] array) {
-        boolean isArrayDesordenado = false;
+    public boolean isArrayOrdenado(int[] array) {
+        boolean isArrayOrdenado =true;
         for (int index = 0; index < numeros.length - 1; index++) {
             if (array[index] > array[index + 1]) {
-                isArrayDesordenado = true;
+                isArrayOrdenado = false;
                 break;
             }
         }
-        return isArrayDesordenado;
+        return isArrayOrdenado;
     }
 
     public int[] ordenarBubbleSort() {
@@ -58,7 +58,7 @@ public class MetodoOrdenacion {
         for (int index = 0; index < arrayOrdenat.length; index++) {
             arrayOrdenat[index] = numeros[index];
         }
-        while (comprobarArrayDesordenado(arrayOrdenat)) {
+        while (!isArrayOrdenado(arrayOrdenat)) {
             for (int index = 0; index < arrayOrdenat.length - 1; index++) {
                 if (arrayOrdenat[index] > arrayOrdenat[index + 1]) {
                     temp = arrayOrdenat[index];
