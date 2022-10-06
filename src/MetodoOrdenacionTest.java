@@ -3,5 +3,6 @@ public class MetodoOrdenacionTest {
         MetodoOrdenacion s=new MetodoOrdenacion();
         //selection
         s.mostrarArray(s.ordenar());
+        s.mostrarArray(s.ordenarBubbleSort());
     }
 }
