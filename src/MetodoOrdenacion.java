@@ -1,5 +1,9 @@
 public class MetodoOrdenacion {
-    int[] numeros = {2, 34, 0, 0, 53, 3, 9, 90, 78, 90, 9};
+    int [] numeros ;
+    public MetodoOrdenacion(int [] numeros){
+      this.numeros = numeros;
+    }
+
 
     public void mostrarArray(int[] array) {
         for (int index = 0; index < array.length; index++) {
@@ -69,4 +73,31 @@ public class MetodoOrdenacion {
         }
         return arrayOrdenat;
     }
+
+    //insertion
+
+    public int [] rotarPosFinsIndMarcat(int [] numeros, int indNum){
+        int temp;
+        for (int i = 0; i <= indNum; i++){
+            if (numeros[indNum] < numeros[i]){
+                temp = numeros[i];
+                numeros[i] = numeros[indNum];
+                numeros[indNum] = temp;
+            }
+        }
+        return  numeros;
+    }
+public int [] ordenarInsertion(){
+    int[] arrayOrdenat = new int[numeros.length];
+    int temp;
+    //copi array
+    for (int index = 0; index < arrayOrdenat.length; index++) {
+        arrayOrdenat[index] = numeros[index];
+    }
+    for (int i = 0 ; i < arrayOrdenat.length;i++){
+       arrayOrdenat = rotarPosFinsIndMarcat(arrayOrdenat,i);
+    }
+    return arrayOrdenat;
+}
+
 }
